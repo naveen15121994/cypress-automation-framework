@@ -16,5 +16,12 @@ describe('Login Test', () => {
     })
 
   })
+  it('Should show error message with invalid credentials', () => {
+    LoginPage.visit()
+    LoginPage.enterUsername('invalidUser')
+    LoginPage.enterPassword('wrongPassword')
+    LoginPage.clickLogin()  
+    cy.contains('Invalid username or password').should('be.visible')
+  })
 
 })
