@@ -20,6 +20,9 @@ describe('Login Test', () => {
     LoginPage.visit()
     LoginPage.enterUsername('invalidUser')
     LoginPage.enterPassword('wrongPassword')
+    LoginPage.clickLogin()
+
+    cy.log('Checking for error message')
     
     cy.contains('Invalid username or password').should('be.visible')
   })
