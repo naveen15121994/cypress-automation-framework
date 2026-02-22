@@ -25,7 +25,6 @@ describe('Login Test', () => {
     cy.log('Checking for error message')
     
     cy.contains('Invalid username or password').should('be.visible')
-    cy.log('Error message is visible as expected')
   })
 
 })
